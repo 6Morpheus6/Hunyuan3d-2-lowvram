@@ -2,7 +2,7 @@ module.exports = {
   run: [{
     method: "shell.run",
     params: {
-      message: "git pull"
+      message: "git pull https://github.com/6Morpheus6/Hunyuan3d-2-lowvram prebuilt"
     }
   }, {
     method: "shell.run",
