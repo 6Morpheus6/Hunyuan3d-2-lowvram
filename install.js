@@ -46,6 +46,7 @@ module.exports = {
         env: {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1,
+          TORCH_CUDA_ARCH_LIST: "6.1;7.5;8.6;8.9;12.0"
         },
         venv: "env",
         path: "app",
@@ -77,7 +78,8 @@ module.exports = {
         env: {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1,
-          NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}"
+          NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}",
+          TORCH_CUDA_ARCH_LIST: "6.1;7.5;8.6;8.9;12.0"
         },
         path: "app/hy3dgen/texgen/custom_rasterizer",
         message: [
@@ -94,7 +96,8 @@ module.exports = {
         env: {
           USE_NINJA: 0,
           DISTUTILS_USE_SDK: 1,
-          NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}"
+          NVCC_PREPEND_FLAGS: "-ccbin {{which('g++')}}",
+          TORCH_CUDA_ARCH_LIST: "6.1;7.5;8.6;8.9;12.0"
         },
         path: "app/hy3dgen/texgen/differentiable_renderer",
         message: [
