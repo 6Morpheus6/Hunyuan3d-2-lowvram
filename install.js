@@ -32,7 +32,7 @@ module.exports = {
         message: [
           "uv pip install ../wheels/diso-0.1.4-cp310-cp310-win_amd64.whl",
           "uv pip install -r requirements.txt",
-          "uv pip install sentencepiece hf-xet",
+          "uv pip install sentencepiece diffusers==0.33.0 gradio==5.50 huggingface_hub[hf-xet]==0.36.2",
           "uv pip install ../wheels/custom_rasterizer-0.1-cp310-cp310-win_amd64.whl",
           "uv pip install ../wheels/mesh_processor-0.0.0-cp310-cp310-win_amd64.whl"
         ]
@@ -55,7 +55,7 @@ module.exports = {
           "{{gpu === 'nvidia' ? 'uv pip install --no-build-isolation diso==0.1.4' : null}}",
           "{{platform === 'darwin' ? 'uv pip install numba>0.60.0' : null}}",
           "uv pip install -r requirements.txt",
-          "uv pip install sentencepiece hf-xet",
+          "uv pip install sentencepiece diffusers==0.33.0 gradio==5.50 huggingface_hub[hf-xet]==0.36.2",
         ]
       }
     },
