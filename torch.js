@@ -15,9 +15,10 @@ module.exports = {
       "when": "{{platform === 'win32' && gpu === 'amd'}}",
       "method": "shell.run",
       "params": {
+        "bluefairy": "off",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch-directml torch torchaudio torchvision --force-reinstall --no-deps"
+        "message": "uv pip install torch-directml torch torchaudio torchvision numpy==1.26.4 --force-reinstall"
       }
     },
     // windows cpu
@@ -45,12 +46,10 @@ module.exports = {
       "when": "{{platform === 'linux' && gpu === 'nvidia'}}",
       "method": "shell.run",
       "params": {
+        "bluefairy": "off",
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": [
-          "uv pip install filelock==3.25.2 pillow==12.1.1 numpy==2.2.6 networkx==3.4.2 fsspec==2026.2.0 typing-extensions==4.15.0 sympy==1.14.0 jinja2==3.1.6",
-          "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 {{args && args.xformers ? 'xformers' : ''}} --index-url https://download.pytorch.org/whl/cu128 --force-reinstall"
-        ]
+        "message": "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 {{args && args.xformers ? 'xformers' : ''}} --index-url https://download.pytorch.org/whl/cu128 --force-reinstall"
       }
     },
     // linux rocm (amd)
